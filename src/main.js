@@ -1,35 +1,34 @@
-// src/main.js
 // App entry point — SPA router (Dependency Inversion: pages depend on services, not raw fetch).
 
 import './styles/main.css';
-import { themeManager }       from './utils/theme.js';
+import { themeManager } from './utils/theme.js';
 import { Navbar, initNavbar } from './components/Navbar.js';
-import { renderHome }         from './pages/home.js';
-import { renderMovies }       from './pages/movies.js';
-import { renderSeries }       from './pages/series.js';
-import { renderCelebrities }  from './pages/celebrities.js';
-import { renderDetails }      from './pages/details.js';
-import { renderSearch }       from './pages/search.js';
+import { renderHome } from './pages/home.js';
+import { renderMovies } from './pages/movies.js';
+import { renderSeries } from './pages/series.js';
+import { renderCelebrities } from './pages/celebrities.js';
+import { renderDetails } from './pages/details.js';
+import { renderSearch } from './pages/search.js';
 
 // Apply saved/preferred theme before first paint (prevents FOUC)
 themeManager.init();
 
-// ── Route Map ────────────────────────────────────────────────
+//  Route Map 
 // Open/Closed: add a new route here without touching existing pages.
 const routes = {
-  '/':            renderHome,
-  '/movies':      renderMovies,
-  '/series':      renderSeries,
+  '/': renderHome,
+  '/movies': renderMovies,
+  '/series': renderSeries,
   '/celebrities': renderCelebrities,
-  '/details':     renderDetails,
-  '/search':      renderSearch,
+  '/details': renderDetails,
+  '/search': renderSearch,
 };
 
-// ── Router ───────────────────────────────────────────────────
+//  Router
 const appContainer = document.getElementById('app');
 
 const renderPage = async () => {
-  const path       = window.location.pathname;
+  const path = window.location.pathname;
   const renderFunc = routes[path] || renderHome;
 
   // 1. Paint the navbar immediately (fast feedback)
@@ -61,7 +60,7 @@ const renderPage = async () => {
   document.getElementById('initial-loader')?.remove();
 };
 
-// ── Navigation (client-side, no full reload) ─────────────────
+// Navigation (client-side, no full reload)
 document.addEventListener('click', (e) => {
   const link = e.target.closest('[data-link]');
   if (!link) return;
@@ -81,5 +80,5 @@ window.addEventListener('popstate', renderPage);
 // Custom navigate event from components
 window.addEventListener('navigate', renderPage);
 
-// ── Boot ─────────────────────────────────────────────────────
+// Boot
 renderPage();

@@ -1,7 +1,7 @@
 // Single Responsibility: renders pagination controls.
 // Receives currentPage, totalPages and returns HTML + an init function.
 
-import '../styles/Pagination.css';
+import '../styles/main.css';
 export const Pagination = (currentPage, totalPages) => {
   const safeTotal = Math.min(totalPages, 500); // TMDB caps at 500
   if (safeTotal <= 1) return '';
@@ -10,7 +10,7 @@ export const Pagination = (currentPage, totalPages) => {
   const pages = [];
   const delta = 2;
   const start = Math.max(1, currentPage - delta);
-  const end   = Math.min(safeTotal, currentPage + delta);
+  const end = Math.min(safeTotal, currentPage + delta);
 
   if (start > 1) pages.push(1, start > 2 ? '…' : null);
   for (let i = start; i <= end; i++) pages.push(i);
