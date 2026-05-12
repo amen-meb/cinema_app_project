@@ -15,7 +15,7 @@ export const Footer = () => `
       <div>
         <p class="footer-heading">Quick Links</p>
         <ul class="footer-links">
-          <li><a href="/" data-link>Home</a></li>
+          <li><a href="/" data-link >Home</a></li>
           <li><a href="/movies" data-link>Movies</a></li>
           <li><a href="/series" data-link>Series</a></li>
           <li><a href="/celebrities" data-link>Celebrities</a></li>

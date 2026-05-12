@@ -66,9 +66,12 @@ document.addEventListener('click', (e) => {
   if (!link) return;
   e.preventDefault();
   const href = link.getAttribute('href');
-  if (href && href !== window.location.pathname) {
-    window.history.pushState(null, null, href);
-    renderPage();
+  if (href) {
+    if (href !== window.location.pathname) {
+      window.history.pushState(null, null, href);
+      renderPage();
+    }
+    window.scrollTo(0, 0);
     // Close mobile menu if open
     document.getElementById('nav-menu')?.classList.remove('open');
   }
