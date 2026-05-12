@@ -192,8 +192,11 @@
     .nav-links.open {
         display: flex;
         flex-direction: column;
-        position: fixed;
-        inset: var(--navbar-h) 0 0 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        border-bottom: 1px solid var(--border);
         background: var(--glass);
         backdrop-filter: blur(25px);
         padding: 40px 8%;
