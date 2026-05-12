@@ -1,0 +1,136 @@
+/* ── 8. SIDEBAR (GENRES) ───────────────────────────────────── */
+.main-layout {
+    display: flex;
+    gap: 28px;
+    padding: 40px 5%;
+    align-items: flex-start;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--glass);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    backdrop-filter: blur(10px);
+    transition: background var(--transition), transform var(--transition), color var(--transition);
+}
+
+.back-btn:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateX(-4px);
+    border-color: var(--accent);
+}
+
+.sidebar {
+    width: 230px;
+    flex-shrink: 0;
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    padding: 20px 16px;
+    position: sticky;
+    top: calc(var(--navbar-h) + 16px);
+}
+
+.sidebar-title {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.genre-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.genre-btn {
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: transparent;
+    transition: background var(--transition), color var(--transition);
+}
+
+.genre-btn:hover {
+    background: var(--glass-light);
+    color: var(--text-primary);
+}
+
+.genre-btn.active {
+    background: rgba(229, 9, 20, 0.15);
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.content-area {
+    flex: 1;
+    min-width: 0;
+}
+
+.content-area .section-title {
+    margin-bottom: 20px;
+}
+
+/* ── 8b. RESPONSIVE SIDEBAR & LAYOUT ─────────────────────────── */
+@media (max-width: 900px) {
+    .main-layout {
+        flex-direction: column;
+        padding: 20px 4%;
+        gap: 24px;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: static;
+        padding: 16px;
+    }
+
+    .sidebar-title {
+        margin-bottom: 10px;
+        font-size: 0.7rem;
+    }
+
+    .genre-list {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        gap: 8px;
+        scrollbar-width: none; /* Hide scrollbar for clean look */
+    }
+
+    .genre-list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .genre-btn {
+        width: auto;
+        white-space: nowrap;
+        padding: 8px 16px;
+        background: var(--bg-surface);
+        border: 1px solid var(--border);
+    }
+}
+
+

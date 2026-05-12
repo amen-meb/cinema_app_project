@@ -1,0 +1,233 @@
+.details-page {
+    position: relative;
+    min-height: 100vh;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    z-index: 50;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--glass);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    backdrop-filter: blur(15px);
+    transition: all var(--transition);
+}
+
+.back-btn:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: translateX(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+}
+
+.details-backdrop {
+    height: 60vh;
+    min-height: 400px;
+    background-size: cover;
+    background-position: center 20%;
+    position: relative;
+}
+
+.details-backdrop-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--bg-base) 0%, rgba(10, 10, 26, 0.4) 100%);
+}
+
+.details-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5% 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.details-container.has-backdrop {
+    margin-top: -120px;
+}
+
+.details-header {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.details-poster {
+    flex: 0 0 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border);
+    transition: transform var(--transition);
+}
+
+.details-poster:hover {
+    transform: scale(1.02);
+}
+
+.details-poster img {
+    width: 100%;
+    display: block;
+}
+
+.details-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.details-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+}
+
+.details-meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    background: var(--bg-surface);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+.details-overview-wrap {
+    margin-bottom: 35px;
+}
+
+.details-section-label {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.details-overview {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.details-genres {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.genre-tag {
+    padding: 6px 16px;
+    background: rgba(229, 9, 20, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(229, 9, 20, 0.2);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: background var(--transition);
+}
+
+.genre-tag:hover {
+    background: rgba(229, 9, 20, 0.2);
+}
+
+.details-section {
+    margin-top: 80px;
+}
+
+.cast-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ── RESPONSIVE DETAILS ────────────────────────────────────── */
+@media (max-width: 900px) {
+    .details-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .details-poster {
+        flex: 0 0 240px;
+        max-width: 240px;
+    }
+
+    .details-meta {
+        justify-content: center;
+    }
+
+    .details-genres {
+        justify-content: center;
+    }
+
+    .details-backdrop {
+        height: 45vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .details-container.has-backdrop {
+        margin-top: -60px;
+    }
+
+    .details-poster {
+        flex: 0 0 200px;
+        max-width: 200px;
+    }
+
+    .details-title {
+        font-size: 2.2rem;
+    }
+
+    .details-overview {
+        font-size: 1rem;
+    }
+
+    .back-btn {
+        top: 15px;
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
