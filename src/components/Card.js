@@ -4,19 +4,19 @@
 import '../styles/Card.css';
 const IMG_BASE = 'https://image.tmdb.org/t/p/w500';
 const PLACEHOLDER = 'https://placehold.co/300x450/12122a/9898bb?text=No+Image';
-const PERSON_PH   = 'https://placehold.co/300x300/12122a/9898bb?text=No+Photo';
+const PERSON_PH = 'https://placehold.co/300x300/12122a/9898bb?text=No+Photo';
 
 export const Card = (item, type = 'default') => {
   const isPerson = type === 'people' || (!item.poster_path && item.profile_path);
-  const title    = item.title || item.name || 'Unknown';
-  const imgPath  = item.poster_path || item.profile_path;
-  const img      = imgPath
+  const title = item.title || item.name || 'Unknown';
+  const imgPath = item.poster_path || item.profile_path;
+  const img = imgPath
     ? `${IMG_BASE}${imgPath}`
     : (isPerson ? PERSON_PH : PLACEHOLDER);
-  const rating   = item.vote_average
+  const rating = item.vote_average
     ? `<span class="card-rating">⭐ ${Number(item.vote_average).toFixed(1)}</span>`
     : '';
-  const year     = item.release_date || item.first_air_date
+  const year = item.release_date || item.first_air_date
     ? (item.release_date || item.first_air_date).slice(0, 4)
     : '';
   const overview = item.overview || item.known_for_department || '';

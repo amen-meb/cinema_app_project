@@ -5,7 +5,9 @@ import { themeManager } from '../utils/theme.js';
 import '../styles/Navbar.css';
 export const Navbar = () => `
   <nav class="navbar" id="main-navbar">
-    <a href="/" data-link class="navbar-logo">CineVerse</a>
+    <a href="/" data-link class="navbar-logo">
+      <img src="/assets/image.png" alt="CineVerse Logo">
+    </a>
     <ul class="nav-links" id="nav-menu">
       <li><a href="/"            data-link id="nav-home">Home</a></li>
       <li><a href="/movies"      data-link id="nav-movies">Movies</a></li>
@@ -14,12 +16,13 @@ export const Navbar = () => `
     </ul>
     <div class="nav-right">
       <form id="nav-search-form" class="nav-search">
-        <input type="text" id="nav-search-input" placeholder="Search..." autocomplete="off" aria-label="Search" required>
-        <button type="submit" aria-label="Submit search">🔍</button>
+        <input type="text" id="nav-search-input" placeholder="Search for a movie or shows" autocomplete="off" aria-label="Search" required>
+        <button type="submit" aria-label="Submit search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            🔍
+        </button>
       </form>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
-        <span class="theme-toggle-icon moon">🌙</span>
-        <span class="theme-toggle-icon sun">☀️</span>
+    
       </button>
       <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -36,13 +39,6 @@ export const initNavbar = () => {
     hamburger.addEventListener('click', () => menu.classList.toggle('open'));
   }
 
-  // Theme toggle
-  const toggleBtn = document.getElementById('theme-toggle');
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      themeManager.toggle();
-    });
-  }
 
   // Search form logic
   const searchForm = document.getElementById('nav-search-form');
@@ -65,9 +61,9 @@ export const initNavbar = () => {
   // Highlight active nav link
   const path = window.location.pathname;
   const map = {
-    '/':            'nav-home',
-    '/movies':      'nav-movies',
-    '/series':      'nav-series',
+    '/': 'nav-home',
+    '/movies': 'nav-movies',
+    '/series': 'nav-series',
     '/celebrities': 'nav-celebrities',
   };
   const activeId = map[path];

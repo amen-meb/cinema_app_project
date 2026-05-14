@@ -23,10 +23,14 @@ export const Pagination = (currentPage, totalPages) => {
   ).join('');
 
   return `
-    <div class="pagination" id="pagination">
-      <button class="page-btn" id="prev-btn" ${currentPage <= 1 ? 'disabled' : ''} data-page="${currentPage - 1}">&#8592; Prev</button>
-      ${pageButtons}
-      <button class="page-btn" id="next-btn" ${currentPage >= safeTotal ? 'disabled' : ''} data-page="${currentPage + 1}">Next &#8594;</button>
+    <div class="pagination-container">
+      <div class="pagination-line top-line"></div>
+      <div class="pagination" id="pagination">
+        <button class="page-btn nav-btn" id="prev-btn" ${currentPage <= 1 ? 'disabled' : ''} data-page="${currentPage - 1}">&#10094;</button>
+        ${pageButtons}
+        <button class="page-btn nav-btn" id="next-btn" ${currentPage >= safeTotal ? 'disabled' : ''} data-page="${currentPage + 1}">&#10095;</button>
+      </div>
+      <div class="pagination-line bottom-line"></div>
     </div>
   `;
 };

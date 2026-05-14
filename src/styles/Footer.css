@@ -1,33 +1,32 @@
-/* ── 10. FOOTER ────────────────────────────────────────────── */
+/* ── 10. FOOTER BASE ── */
 .footer {
-    background: var(--bg-card);
-    border-top: 1px solid var(--border);
-    padding: 50px 5% 30px;
+    background: #0a0a0b;
+    /* Deep dark background from design */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 60px 5% 40px;
 }
 
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1.5fr 1fr;
     gap: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
-.footer-brand-logo {
+.footer-brand-logo a {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem;
     letter-spacing: 3px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    margin-bottom: 12px;
+    color: #e50914;
+    /* Red color from design */
+    text-decoration: none;
 }
 
 .footer-brand-desc {
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.6;
+    margin-top: 15px;
     max-width: 300px;
 }
 
@@ -36,120 +35,109 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 16px;
+    color: #555;
+    /* Muted gray for section labels */
+    margin-bottom: 20px;
 }
 
-.footer-links {
+.footer-links,
+.footer-contact {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    list-style: none;
+    padding: 0;
 }
 
-.footer-links a {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    transition: color var(--transition);
+.footer-links a,
+.footer-contact p,
+.footer-contact a {
+    font-size: 0.95rem;
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
 }
 
-.footer-links a:hover {
-    color: var(--accent);
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #fff;
+}
+
+/* Email highlight from design */
+.footer-contact a {
+    color: #fff;
+    font-weight: 500;
 }
 
 .footer-socials {
     display: flex;
-    gap: 15px;
-    margin-top: 5px;
+    gap: 20px;
 }
 
 .footer-socials a {
-    color: var(--text-secondary);
-    transition: transform 0.2s ease, color 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #aaa;
+    transition: color 0.3s, transform 0.2s;
 }
 
 .footer-socials a:hover {
-    color: var(--accent);
+    color: #fff;
     transform: translateY(-3px);
 }
 
-.footer-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    font-size: 0.88rem;
-    color: var(--text-secondary);
-}
-
-.footer-contact a {
-    color: var(--text-primary);
-    transition: color var(--transition);
-}
-
-.footer-contact a:hover {
-    color: var(--accent);
-}
-
-.portfolio-link {
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
-    font-weight: 600;
-}
-
 .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 30px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.footer-tmdb {
-    display: flex;
     align-items: center;
-    gap: 6px;
-    color: var(--text-secondary);
-    font-size: 0.82rem;
+    font-size: 0.85rem;
+    color: #555;
 }
 
-/* ── 10b. RESPONSIVE FOOTER ────────────────────────────────────── */
+.footer-tmdb a {
+    color: #fca311;
+    /* Orange/Gold TMDB color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ── 10b. RESPONSIVENESS (MATCHING THE DESIGN SNIPPET) ── */
+
 @media (max-width: 1024px) {
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 50px;
     }
 }
 
 @media (max-width: 768px) {
     .footer {
-        padding: 40px 5% 24px;
         text-align: center;
+        /* Center everything like the design image */
+        padding: 50px 5% 30px;
     }
 
     .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
     }
 
     .footer-brand-desc {
         max-width: 100%;
-        margin: 0 auto 12px;
     }
 
-    .footer-links {
+    .footer-links,
+    .footer-socials {
+        justify-content: center;
         align-items: center;
     }
 
     .footer-bottom {
         flex-direction: column;
-        gap: 16px;
+        gap: 15px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
     }
 }
-
-
