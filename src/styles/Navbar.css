@@ -160,7 +160,6 @@
         text-align: center;
     }
 
-    /* Animation for the X shape */
     .nav-links.open~.nav-right .nav-hamburger span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }

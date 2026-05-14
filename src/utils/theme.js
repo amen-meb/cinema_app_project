@@ -1,8 +1,7 @@
-// src/utils/theme.js
-// Single Responsibility: manages dark/light theme state and persistence.
+// Manages dark/light theme state and persistence.
 
 const STORAGE_KEY = 'cineverse-theme';
-const DARK  = 'dark';
+const DARK = 'dark';
 const LIGHT = 'light';
 
 export const themeManager = {

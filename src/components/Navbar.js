@@ -6,7 +6,7 @@ import '../styles/Navbar.css';
 export const Navbar = () => `
   <nav class="navbar" id="main-navbar">
     <a href="/" data-link class="navbar-logo">
-      <img src="/assets/image.png" alt="CineVerse Logo">
+      <img src="./assets/image.png" alt="CineVerse Logo">
     </a>
     <ul class="nav-links" id="nav-menu">
       <li><a href="/"            data-link id="nav-home">Home</a></li>
@@ -22,8 +22,6 @@ export const Navbar = () => `
             🔍
         </button>
       </form>
-    
-      </button>
       <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -49,9 +47,6 @@ export const initNavbar = () => {
       const query = searchInput.value.trim();
       if (query) {
         window.history.pushState(null, null, `/search?q=${encodeURIComponent(query)}`);
-        // Trigger renderPage manually or wait for popstate? We don't have global renderPage exposed easily here
-        // Actually, since it's a SPA, we can dispatch a popstate event, or expose a global function.
-        // Wait, main.js has `renderPage`. We could dispatch a custom event.
         const navEvent = new CustomEvent('navigate');
         window.dispatchEvent(navEvent);
       }

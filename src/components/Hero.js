@@ -4,8 +4,8 @@ const IMG_BASE = 'https://image.tmdb.org/t/p/original';
 
 // Helper to simulate genres if not provided by API
 const getPlaceholderGenres = (item) => {
-  if (item.genre_names) return item.genre_names; // If your API logic already maps IDs to Names
-  return ['Action', 'Adventure', 'Drama']; // Fallback
+  if (item.genre_names) return item.genre_names;
+  return ['Action', 'Adventure', 'Drama'];
 };
 
 const buildSlide = (item, index) => {

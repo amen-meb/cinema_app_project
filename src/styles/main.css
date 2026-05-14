@@ -1,8 +1,6 @@
-/* CINEVERSE — DARK & LIGHT THEME */
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap');
 
-/* ── 1. DESIGN TOKENS — DARK (default) ─────────────────────── */
+/* DESIGN TOKENS — DARK (default) */
 :root {
     --bg-base: #0a0a1a;
     --bg-card: #12122a;
@@ -25,7 +23,7 @@
     --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ── 1b. DESIGN TOKENS — LIGHT ─────────────────────────────── */
+/* DESIGN TOKENS — LIGHT */
 [data-theme="light"] {
     --bg-base: #f0f2f8;
     --bg-card: #ffffff;
@@ -39,10 +37,9 @@
     --glass-light: rgba(0, 0, 0, 0.04);
     --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.18);
-    /* accent & accent2 stay the same for brand consistency */
 }
 
-/* ── 1c. SMOOTH THEME TRANSITION ────────────────────────────── */
+/* SMOOTH THEME TRANSITION */
 html {
     color-scheme: dark;
 }
@@ -65,7 +62,7 @@ body,
         box-shadow 0.35s ease;
 }
 
-/* ── 2. RESET & BASE ────────────────────────────────────────── */
+/* RESET & BASE */
 *,
 *::before,
 *::after {
@@ -107,7 +104,7 @@ button {
     border: none;
 }
 
-/* ── 3. INITIAL LOADER ─────────────────────────────────────── */
+/* INITIAL LOADER */
 .initial-loader {
     position: fixed;
     inset: 0;
@@ -146,7 +143,7 @@ button {
     }
 }
 
-/* ── 6. SECTION HEADINGS ───────────────────────────────────── */
+/* SECTION HEADINGS */
 .section-header {
     display: flex;
     align-items: center;
@@ -183,7 +180,7 @@ button {
     opacity: 0.7;
 }
 
-/* ── 12. LOADING & EMPTY STATES ────────────────────────────── */
+/* LOADING & EMPTY STATES */
 .loading-state {
     display: flex;
     flex-direction: column;
@@ -241,7 +238,7 @@ button {
     }
 }
 
-/* ── 13. SEARCH BAR ────────────────────────────────────────── */
+/* SEARCH BAR */
 .search-bar-wrap {
     display: flex;
     align-items: center;
@@ -273,7 +270,7 @@ button {
 }
 
 
-/* ── 14. GLOBAL RESPONSIVE ADJUSTMENTS ──────────────────────── */
+/* GLOBAL RESPONSIVE */
 @media (max-width: 768px) {
     body {
         font-size: 15px;

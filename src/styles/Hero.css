@@ -1,4 +1,4 @@
-/* ── HERO SECTION ── */
+/* HERO SECTION */
 .hero {
     position: relative;
     height: 85vh;
@@ -19,7 +19,6 @@
     inset: 0;
     background-size: cover;
     background-position: center 20%;
-    /* Shows faces better */
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -98,7 +97,6 @@
     gap: 8px;
     padding: 12px 35px;
     background: #e50914;
-    /* Red button */
     color: #fff;
     text-decoration: none;
     font-weight: 600;
@@ -111,7 +109,7 @@
     background: #ff0f1a;
 }
 
-/* ── CENTERED SIDE ARROWS ── */
+/* CENTERED SIDE ARROWS */
 .hero-arrow {
     position: absolute;
     top: 50%;

@@ -1,4 +1,4 @@
-/* ── 11. PAGE SECTION – CELEBRITIES ────────────────────────── */
+/* PAGE SECTION – CELEBRITIES */
 .celebrities-hero-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -51,7 +51,7 @@
     font-weight: 500;
 }
 
-/* ── 11b. RESPONSIVE CELEBRITIES ────────────────────────────── */
+/* RESPONSIVE CELEBRITIES */
 @media (max-width: 1024px) {
     .celebrities-hero-grid {
         grid-template-columns: repeat(4, 1fr);
@@ -76,5 +76,3 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
-

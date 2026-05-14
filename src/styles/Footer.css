@@ -1,7 +1,6 @@
-/* ── 10. FOOTER BASE ── */
+/* FOOTER */
 .footer {
     background: #0a0a0b;
-    /* Deep dark background from design */
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 60px 5% 40px;
 }
@@ -18,7 +17,6 @@
     font-size: 2rem;
     letter-spacing: 3px;
     color: #e50914;
-    /* Red color from design */
     text-decoration: none;
 }
 
@@ -36,7 +34,6 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: #555;
-    /* Muted gray for section labels */
     margin-bottom: 20px;
 }
 
@@ -96,12 +93,11 @@
 
 .footer-tmdb a {
     color: #fca311;
-    /* Orange/Gold TMDB color */
     text-decoration: none;
     font-weight: bold;
 }
 
-/* ── 10b. RESPONSIVENESS (MATCHING THE DESIGN SNIPPET) ── */
+/* RESPONSIVENESS */
 
 @media (max-width: 1024px) {
     .footer-grid {
@@ -113,7 +109,6 @@
 @media (max-width: 768px) {
     .footer {
         text-align: center;
-        /* Center everything like the design image */
         padding: 50px 5% 30px;
     }
 
