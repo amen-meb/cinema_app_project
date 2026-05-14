@@ -1,4 +1,4 @@
-// App entry point — SPA router (Dependency Inversion: pages depend on services, not raw fetch).
+// SPA router
 
 import './styles/main.css';
 import { themeManager } from './utils/theme.js';
@@ -10,11 +10,10 @@ import { renderCelebrities } from './pages/celebrities.js';
 import { renderDetails } from './pages/details.js';
 import { renderSearch } from './pages/search.js';
 
-// Apply saved/preferred theme before first paint (prevents FOUC)
+// Apply saved theme before first paint
 themeManager.init();
 
-//  Route Map 
-// Open/Closed: add a new route here without touching existing pages.
+// Router map
 const routes = {
   '/': renderHome,
   '/movies': renderMovies,
@@ -31,16 +30,16 @@ const renderPage = async () => {
   const path = window.location.pathname;
   const renderFunc = routes[path] || renderHome;
 
-  // 1. Paint the navbar immediately (fast feedback)
+  // Paint navbar
   appContainer.innerHTML = Navbar();
   initNavbar();
 
-  // 2. Create a dedicated content div below the navbar
+  // Create page con tent div below navbar
   const pageContent = document.createElement('div');
   pageContent.id = 'page-content';
   appContainer.appendChild(pageContent);
 
-  // 3. Render the matching page into that content div
+  // Render matching page
   try {
     await renderFunc(pageContent);
   } catch (err) {
@@ -56,11 +55,11 @@ const renderPage = async () => {
     `;
   }
 
-  // 4. Remove the initial full-screen loader (only runs once)
+  // Remove initial loader
   document.getElementById('initial-loader')?.remove();
 };
 
-// Navigation (client-side, no full reload)
+// Navigation
 document.addEventListener('click', (e) => {
   const link = e.target.closest('[data-link]');
   if (!link) return;
@@ -72,12 +71,11 @@ document.addEventListener('click', (e) => {
       renderPage();
     }
     window.scrollTo(0, 0);
-    // Close mobile menu if open
     document.getElementById('nav-menu')?.classList.remove('open');
   }
 });
 
-// Back/forward browser buttons
+// Back/forward buttons
 window.addEventListener('popstate', renderPage);
 
 // Custom navigate event from components

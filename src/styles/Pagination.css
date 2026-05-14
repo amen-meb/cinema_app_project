@@ -1,30 +1,23 @@
-/* ── PAGINATION CONTAINER ── */
+/* Pagination styles */
 .pagination-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    /* Center it under the grid */
     padding: 50px 0;
     background-color: transparent;
-    /* Let the main background show through */
 }
 
 .pagination {
     display: flex;
     align-items: center;
     gap: 10px;
-    /* Exact spacing from design */
 }
 
-/* ── INDIVIDUAL SQUARE BUTTONS ── */
 .page-btn {
     width: 42px;
-    /* Exact square size */
     height: 42px;
     border-radius: 8px;
-    /* Smooth rounded corners */
     background: #444444;
-    /* The specific gray from your screenshot */
     color: #ffffff;
     font-size: 0.95rem;
     font-weight: 500;
@@ -35,28 +28,19 @@
     justify-content: center;
     transition: all 0.2s ease;
     padding: 0;
-    /* Ensures it stays a perfect square */
 }
 
-/* Hover State */
 .page-btn:hover:not(:disabled) {
     background: #555555;
-    /* Subtle highlight */
-    transform: translateY(-1px);
-    /* Slight lift effect */
 }
 
-/* Active Page State */
 .page-btn.active {
     background: #666666;
-    /* Stand out slightly more */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Disabled/Navigation Buttons */
 .page-btn.nav-btn {
     background: #333333;
-    /* Darker look for arrows */
     color: #888;
 }
 
@@ -65,7 +49,6 @@
     cursor: not-allowed;
 }
 
-/* The "..." Text */
 .page-info {
     color: #888;
     font-weight: bold;
@@ -74,12 +57,10 @@
     user-select: none;
 }
 
-/* Responsiveness: make them smaller on mobile */
 @media (max-width: 480px) {
     .page-btn {
         width: 35px;
         height: 35px;
-        font-size: 0.8rem;
     }
 
     .pagination {
