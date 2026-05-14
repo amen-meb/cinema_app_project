@@ -1,79 +1,88 @@
-/* ── 9. PAGINATION ─────────────────────────────────────────── */
+/* ── PAGINATION CONTAINER ── */
 .pagination-container {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    padding: 40px 0 20px;
-    background-color: var(--bg-base); /* Very dark background */
-}
-
-.pagination-line {
-    width: 100%;
-    height: 1px;
-}
-
-.top-line {
-    border-top: 1px dotted rgba(255, 255, 255, 0.2);
-}
-
-.bottom-line {
-    background-color: #2196F3; /* Bright blue line */
-    height: 2px;
+    justify-content: center;
+    /* Center it under the grid */
+    padding: 50px 0;
+    background-color: transparent;
+    /* Let the main background show through */
 }
 
 .pagination {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 24px 0;
-    flex-wrap: wrap;
+    gap: 10px;
+    /* Exact spacing from design */
 }
 
+/* ── INDIVIDUAL SQUARE BUTTONS ── */
 .page-btn {
-    min-width: 44px;
-    height: 44px;
+    width: 42px;
+    /* Exact square size */
+    height: 42px;
     border-radius: 8px;
-    background: #333333; /* Dark grey */
-    color: #f0f0f0;
-    font-size: 1rem;
+    /* Smooth rounded corners */
+    background: #444444;
+    /* The specific gray from your screenshot */
+    color: #ffffff;
+    font-size: 0.95rem;
     font-weight: 500;
     border: none;
-    transition: background var(--transition), color var(--transition), transform 0.1s ease;
-    padding: 0 12px;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0;
+    /* Ensures it stays a perfect square */
 }
 
+/* Hover State */
 .page-btn:hover:not(:disabled) {
-    background: #4a4a4a;
-    color: #ffffff;
-    transform: translateY(-2px);
-}
-
-.page-btn.active {
     background: #555555;
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Subtle highlight */
+    transform: translateY(-1px);
+    /* Slight lift effect */
 }
 
+/* Active Page State */
+.page-btn.active {
+    background: #666666;
+    /* Stand out slightly more */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Disabled/Navigation Buttons */
 .page-btn.nav-btn {
-    background: #444444;
-    font-size: 1.1rem;
+    background: #333333;
+    /* Darker look for arrows */
+    color: #888;
 }
 
 .page-btn:disabled {
-    opacity: 0.4;
+    opacity: 0.3;
     cursor: not-allowed;
-    background: #2a2a2a;
-    color: #666666;
 }
 
+/* The "..." Text */
 .page-info {
-    font-size: 1rem;
-    color: #f0f0f0;
-    padding: 0 8px;
-    letter-spacing: 2px;
-    font-weight: 600;
+    color: #888;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    user-select: none;
+}
+
+/* Responsiveness: make them smaller on mobile */
+@media (max-width: 480px) {
+    .page-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+
+    .pagination {
+        gap: 5px;
+    }
 }

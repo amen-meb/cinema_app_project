@@ -1,123 +1,99 @@
-/* ── 8. SIDEBAR (GENRES) ───────────────────────────────────── */
-.main-layout {
-    display: flex;
-    gap: 28px;
-    padding: 40px 5%;
-    align-items: flex-start;
-}
-
-.back-btn {
-    position: absolute;
-    top: 20px;
-    left: 5%;
-    z-index: 20;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: var(--glass);
-    color: var(--text-primary);
-    border: 1px solid var(--border);
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    backdrop-filter: blur(10px);
-    transition: background var(--transition), transform var(--transition), color var(--transition);
-}
-
-.back-btn:hover {
-    background: var(--accent);
-    color: #fff;
-    transform: translateX(-4px);
-    border-color: var(--accent);
-}
-
+/* THE SIDEBAR CONTAINER */
 .sidebar {
-    width: 230px;
+    width: 260px;
     flex-shrink: 0;
-    background: var(--bg-card);
-    border-radius: 16px;
-    border: 1px solid var(--border);
-    padding: 20px 16px;
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 25px 20px;
     position: sticky;
-    top: calc(var(--navbar-h) + 16px);
+    top: 100px;
+    height: fit-content;
 }
 
 .sidebar-title {
-    font-size: 0.75rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--border);
+    color: #ffffff;
+    margin-bottom: 25px;
+    letter-spacing: normal;
+    text-transform: none;
 }
 
 .genre-list {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
 }
 
+/* ── GENRE BUTTONS ── */
 .genre-btn {
     width: 100%;
     text-align: left;
-    padding: 10px 14px;
+    padding: 12px 16px;
     border-radius: 8px;
-    font-size: 0.88rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    color: var(--text-secondary);
+    color: #bbbbbb;
     background: transparent;
-    transition: background var(--transition), color var(--transition);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .genre-btn:hover {
-    background: var(--glass-light);
-    color: var(--text-primary);
+    color: #ffffff;
+    background: #262626;
 }
 
+/* ACTIVE STATE */
 .genre-btn.active {
-    background: rgba(229, 9, 20, 0.15);
-    color: var(--accent);
-    font-weight: 700;
+    background: #262626;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 600;
 }
 
-.content-area {
+/* ── LAYOUT WRAPPER (Used in movies.js) ── */
+.movies-page-container {
+    display: flex;
+    gap: 40px;
+    padding: 40px 5%;
+    align-items: flex-start;
+}
+
+.movies-main-content {
     flex: 1;
     min-width: 0;
 }
 
-.content-area .section-title {
-    margin-bottom: 20px;
+/* ── RESPONSIVE SIDEBAR ── */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
 }
 
-/* ── 8b. RESPONSIVE SIDEBAR & LAYOUT ─────────────────────────── */
 @media (max-width: 900px) {
-    .main-layout {
+    .movies-page-container {
         flex-direction: column;
         padding: 20px 4%;
-        gap: 24px;
     }
 
     .sidebar {
         width: 100%;
         position: static;
-        padding: 16px;
-    }
-
-    .sidebar-title {
-        margin-bottom: 10px;
-        font-size: 0.7rem;
+        padding: 15px;
     }
 
     .genre-list {
         flex-direction: row;
-        flex-wrap: nowrap;
         overflow-x: auto;
-        padding-bottom: 8px;
-        gap: 8px;
-        scrollbar-width: none; /* Hide scrollbar for clean look */
+        padding-bottom: 10px;
+        gap: 10px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
     .genre-list::-webkit-scrollbar {
@@ -127,10 +103,7 @@
     .genre-btn {
         width: auto;
         white-space: nowrap;
-        padding: 8px 16px;
-        background: var(--bg-surface);
-        border: 1px solid var(--border);
+        background: #1a1a1a;
+        border: 1px solid #333;
     }
 }
-
-
