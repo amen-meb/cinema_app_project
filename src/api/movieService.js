@@ -1,7 +1,7 @@
-// Single Responsibility: provides a clean interface for fetching movie-related data.
+// provides a clean interface for fetching movie-related data
 
 import { fetchData } from './apiConfig';
-
+// get movies data from TMDB
 export const movieService = {
     getNowPlaying: (page = 1) =>
         fetchData(`/movie/now_playing?language=en-US&page=${page}`),

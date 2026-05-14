@@ -1,6 +1,6 @@
-// Single Responsibility: provides a clean interface for fetching people-related data.
+// provides a clean interface for fetching people-related data.
 import { fetchData } from './apiConfig';
-
+// get people data from TMDB
 export const peopleService = {
     getTrending: () =>
         fetchData('/trending/person/week'),

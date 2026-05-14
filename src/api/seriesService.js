@@ -1,6 +1,6 @@
-// Single Responsibility: provides a clean interface for fetching TV series-related data.
+// provides a clean interface for fetching TV series-related data.
 import { fetchData } from './apiConfig';
-
+// get series data from TMDB    
 export const seriesService = {
     getOnTheAir: (page = 1) =>
         fetchData(`/tv/on_the_air?language=en-US&page=${page}`),

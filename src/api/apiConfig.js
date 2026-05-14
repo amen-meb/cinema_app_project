@@ -9,7 +9,7 @@ export const options = {
         accept: 'application/json'
     }
 };
-
+// fetch data from TMDB
 export const fetchData = async (endpoint) => {
     try {
         const separator = endpoint.includes('?') ? '&' : '?';
