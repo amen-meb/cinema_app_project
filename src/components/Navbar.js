@@ -6,7 +6,7 @@ import '../styles/Navbar.css';
 export const Navbar = () => `
   <nav class="navbar" id="main-navbar">
     <a href="/" data-link class="navbar-logo">
-      <img src="./assets/image.png" alt="CineVerse Logo">
+      <img src="./image.png" alt="CineVerse Logo">
     </a>
     <ul class="nav-links" id="nav-menu">
       <li><a href="/"            data-link id="nav-home">Home</a></li>
