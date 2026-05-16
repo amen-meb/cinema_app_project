@@ -56,7 +56,7 @@ export const renderSeries = async (container) => {
       <div class="section-header">
         <h2 class="section-title">Trending This Week</h2>
       </div>
-      <div class="grid">${trendItems.slice(0,10).map(s => Card(s,'tv')).join('')}</div>
+      <div class="grid">${trendItems.slice(0, 7).map(s => Card(s,'tv')).join('')}</div>
     </section>
     <div class="main-layout">
       ${Sidebar(genres, '')}
