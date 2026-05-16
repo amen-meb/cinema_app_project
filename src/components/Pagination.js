@@ -1,11 +1,9 @@
 import '../styles/Pagination.css';
 
-/**
- * Renders the pagination HTML string.
- * Uses a delta-based window to show current pages and an ellipsis for the last page.
- */
+// Renders the pagination HTML string.
+// delta-based window to show current pages and an ellipsis for the last page.
 export const Pagination = (currentPage, totalPages) => {
-  const safeTotal = Math.min(totalPages, 500);
+  const safeTotal = Math.min(totalPages, 50);
   if (safeTotal <= 1) return '';
 
   const pages = [];

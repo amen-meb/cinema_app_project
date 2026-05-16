@@ -5,6 +5,7 @@ import '../styles/details.css';
 const IMG_BASE = 'https://image.tmdb.org/t/p/w1280';
 const POSTER_BASE = 'https://image.tmdb.org/t/p/w500';
 
+// rendering & managing the details page.
 export const renderDetails = async (container) => {
   const urlParams = new URLSearchParams(window.location.search);
   const type = urlParams.get('type') || 'movie';
@@ -25,7 +26,7 @@ export const renderDetails = async (container) => {
   try {
     const append = type === 'person' ? 'combined_credits' : 'credits,videos,similar';
     const data = await fetchData(`/${type}/${id}?append_to_response=${append}`);
-    
+
     if (!data) throw new Error('Failed to fetch details');
 
     const title = data.title || data.name || 'Unknown';
@@ -78,7 +79,7 @@ export const renderDetails = async (container) => {
       }
     }
 
-    // Similar
+    // similar 
     let similarHtml = '';
     if (type !== 'person' && data.similar && data.similar.results && data.similar.results.length > 0) {
       const similarItems = data.similar.results.slice(0, 10);
@@ -91,7 +92,7 @@ export const renderDetails = async (container) => {
         </div>
       `;
     }
-
+    // rendering & managing the details page.
     container.innerHTML = `
       <div class="details-page">
         <button id="back-btn" class="back-btn" aria-label="Go Back">
@@ -142,7 +143,7 @@ export const renderDetails = async (container) => {
         </div>
       </div>
     `;
-    
+
     // Add event listener to back button
     const backBtn = container.querySelector('#back-btn');
     if (backBtn) {
@@ -152,7 +153,7 @@ export const renderDetails = async (container) => {
     }
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    
+
   } catch (err) {
     console.error('Error rendering details:', err);
     container.innerHTML = `
