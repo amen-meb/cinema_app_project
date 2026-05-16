@@ -36,9 +36,9 @@ export const renderHome = async (container) => {
 
   container.innerHTML = `
     ${Hero(heroItems)}
-    ${SectionRow('Trending Movies', 'trending-movies', moviesItems.slice(0, 10).map(m => Card(m, 'movie')).join(''))}
-    ${SectionRow('Trending Series', 'trending-series', seriesItems.slice(0, 10).map(s => Card(s, 'tv')).join(''))}
-    ${SectionRow('Trending Celebs', 'trending-people', peopleItems.slice(0, 10).map(p => Card(p, 'people')).join(''))}
+    ${SectionRow('Trending Movies', 'trending-movies', moviesItems.slice(0, 7).map(m => Card(m, 'movie')).join(''))}
+    ${SectionRow('Trending Series', 'trending-series', seriesItems.slice(0, 7).map(s => Card(s, 'tv')).join(''))}
+    ${SectionRow('Trending Celebs', 'trending-people', peopleItems.slice(0, 7).map(p => Card(p, 'people')).join(''))}
     ${Footer()}
   `;
 

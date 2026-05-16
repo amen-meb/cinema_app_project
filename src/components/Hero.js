@@ -7,7 +7,7 @@ const getPlaceholderGenres = (item) => {
   if (item.genre_names) return item.genre_names;
   return ['Action', 'Adventure', 'Drama'];
 };
-
+//
 const buildSlide = (item, index) => {
   const bg = item.backdrop_path ? `${IMG_BASE}${item.backdrop_path}` : '';
   const title = item.title || item.name || 'Untitled';
@@ -31,7 +31,7 @@ const buildSlide = (item, index) => {
     </div>
   `;
 };
-
+//
 export const Hero = (items = []) => {
   const slides = items.slice(0, 5);
   if (!slides.length) return '';

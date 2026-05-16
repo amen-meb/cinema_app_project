@@ -1,4 +1,4 @@
-// Single Responsibility: renders the site footer only.
+// renders the site footer only.
 
 import '../styles/Footer.css';
 

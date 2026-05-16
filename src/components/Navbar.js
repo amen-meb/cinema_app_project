@@ -1,4 +1,4 @@
-// Single Responsibility: renders + manages the navigation bar and theme toggle.
+// renders & manages the navigation bar and theme toggle.
 
 import { themeManager } from '../utils/theme.js';
 

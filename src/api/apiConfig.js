@@ -1,14 +1,16 @@
-// Single Responsibility: centralizes API configuration and data fetching logic.
+// centralizes API configuration and data fetching logic.
 
 export const BASE_URL = 'https://api.themoviedb.org/3';
 export const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
+// Common fetch options for all API requests
 export const options = {
     method: 'GET',
     headers: {
         accept: 'application/json'
     }
 };
+
 // fetch data from TMDB
 export const fetchData = async (endpoint) => {
     try {

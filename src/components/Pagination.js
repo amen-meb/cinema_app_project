@@ -53,7 +53,7 @@ export const Pagination = (currentPage, totalPages) => {
   `;
 };
 
-
+// Initializes pagination event listeners. Calls onPageChange with the new page number when a page button is clicked.
 export const initPagination = (onPageChange) => {
   const paginationEl = document.getElementById('pagination');
   if (!paginationEl) return;

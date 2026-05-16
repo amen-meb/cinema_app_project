@@ -22,7 +22,7 @@ export const Sidebar = (genres = [], activeId = null) => `
   </aside>
 `;
 
-// Attaches click handlers. onGenreSelect(genreId) is called with the selected genre id (or '' for All).
+// Attaches click handlers. 
 export const initSidebar = (onGenreSelect) => {
   document.querySelectorAll('.genre-btn').forEach(btn => {
     btn.addEventListener('click', () => {

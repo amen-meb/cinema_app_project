@@ -1,5 +1,5 @@
 // render a single media card
-// MovieCard, SeriesCard, and PeopleCard all share this base.
+// MovieCard, SeriesCard, and PeopleCard.
 
 import '../styles/Card.css';
 const IMG_BASE = 'https://image.tmdb.org/t/p/w500';
